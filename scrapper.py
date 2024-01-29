@@ -20,6 +20,10 @@ with open(filename, "w", newline='') as csvfile:
 
         url_sondage = f'https://www.senscritique.com{bite_sondage}'
 
+        if (url_sondage == 'https://www.senscritique.com/top/resultats/les_films_les_plus_attendus_de_2024/3637547'):
+            print('break')
+            continue
+
         response_sondage = requests.get(url_sondage)
         html_content_sondage = response_sondage.text
 
@@ -35,6 +39,7 @@ with open(filename, "w", newline='') as csvfile:
             html_content_film = response_film.text
 
             soup_film = BeautifulSoup(html_content_film, "html.parser")
+
 
             title = soup_film.find('h1', class_="sc-e6f263fc-1 sc-842a8720-1 bwGoop dBdZmZ").text
             realisateur = soup_film.find('a', class_="sc-e6f263fc-0 sc-a0949da7-0 GItpw eShzae").text
