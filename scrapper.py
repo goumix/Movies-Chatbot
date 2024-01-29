@@ -19,3 +19,5 @@ with open('index.csv', 'a') as csv_file:
   writer.writerow(['Title','Author'])
   for col1,col2 in zip(text1, text2):
     writer.writerow([col1.get_text().strip(), col2.get_text().strip()])
+
+#ma bite
