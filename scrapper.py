@@ -16,9 +16,9 @@ with open(filename, "w", newline='') as csvfile:
 
 
     for link_sondage in soup_site.find_all("a", class_="sc-e6f263fc-0 sc-a0949da7-0 iZcnfH cYbaKn sc-7f2e5247-3 gVquGs"):
-        bite_sondage = link_sondage.get('href')
+        href_sondage = link_sondage.get('href')
 
-        url_sondage = f'https://www.senscritique.com{bite_sondage}'
+        url_sondage = f'https://www.senscritique.com{href_sondage}'
 
         if (url_sondage == 'https://www.senscritique.com/top/resultats/les_films_les_plus_attendus_de_2024/3637547'):
             print('break')
@@ -31,9 +31,9 @@ with open(filename, "w", newline='') as csvfile:
 
         for link_film in soup_sondage.find_all("a", class_="sc-e6f263fc-0 sc-a0949da7-1 cTitej eGjRhz sc-4495ecbb-3 hCRsTs"):
 
-            bite_film = link_film.get('href')
+            href_film = link_film.get('href')
 
-            url_film = f'https://www.senscritique.com{bite_film}'
+            url_film = f'https://www.senscritique.com{href_film}'
 
             response_film = requests.get(url_film)
             html_content_film = response_film.text
@@ -52,5 +52,3 @@ with open(filename, "w", newline='') as csvfile:
 
             print([title, realisateur, date, genres, description, note])
             writer.writerow([title, realisateur, date, genres, description, note])
-
-        print('ok')
