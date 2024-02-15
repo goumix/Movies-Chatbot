@@ -14,8 +14,8 @@ def initialize_vector_db(prompt):
     documents = loader.load()
     db = Chroma.from_documents(documents, embedding_function)
     docs = db.similarity_search(prompt)
-    print(docs[0])
-    return docs[0]
+    print(docs)
+    return docs
 
 
 def mistral_response(prompt):
