@@ -15,7 +15,7 @@ Avant de lancer le projet, assurez-vous d'avoir les éléments suivants install�
 1. Clonez ce dépôt GitHub sur votre machine locale :
 
     ```bash
-    git clone https://github.com/goumix/chatbot-ai-local.git
+    git clone git@github.com:goumix/local-llm.git
     ```
 
 2. Téléchargez toutes les dépendances nécessaires en exécutant la commande suivante :
